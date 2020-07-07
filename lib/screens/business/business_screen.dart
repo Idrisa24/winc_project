@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_multi_formatter/formatters/phone_input_formatter.dart';
-import 'package:winc_project/utillites/constants.dart';
 
 class BusinessScreen extends StatefulWidget {
   BusinessScreen({Key key}) : super(key: key);
@@ -94,6 +93,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                       if (value.isEmpty) {
                         return 'Please enter your business name';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',
@@ -120,6 +120,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                       if (value.isEmpty) {
                         return 'Please enter your business phone number';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business phone number',
@@ -144,6 +145,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                       if (value.isEmpty) {
                         return 'Please enter your business address';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business physical address',
@@ -166,6 +168,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                       if (value.isEmpty) {
                         return 'Please enter your business email';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business email',
@@ -190,6 +193,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                       if (value.isEmpty) {
                         return 'Please enter a short description';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a short description about your business',
@@ -206,11 +210,12 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     bottom: _minimumPadding,
                   ),
                   child: TextFormField(
-                    controller: _businessNameController,
+                    controller: _businessServiceNameController,
                     validator: (String value) {
                       if (value.isEmpty) {
                         return 'Please enter your business name';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',
@@ -227,11 +232,12 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     bottom: _minimumPadding,
                   ),
                   child: TextFormField(
-                    controller: _businessNameController,
+                    controller: _businessProfessioController,
                     validator: (String value) {
                       if (value.isEmpty) {
                         return 'Please enter your business name';
                       }
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',

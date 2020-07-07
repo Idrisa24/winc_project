@@ -13,7 +13,7 @@
         android:label="winc"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCtciPsdystM1Jo9cPH_2TsVmx2-I4uN8o"/>
+            android:value="#######"/>
     
         <activity
             android:name=".MainActivity"
