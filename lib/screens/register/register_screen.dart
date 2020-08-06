@@ -26,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
@@ -61,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
             obscureText: true,

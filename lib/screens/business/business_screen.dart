@@ -56,7 +56,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
         ),
         color: Colors.white,
         child: Text(
-          'Save',
+          'Save Save',
           style: TextStyle(
             color: Color(0xFF26A69A),
             letterSpacing: 1.5,
@@ -98,8 +98,15 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',
                       labelText: 'Business name',
+                      labelStyle: TextStyle(color: Colors.white54),
+                      hintStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
                       ),
                     ),
                   ),
@@ -125,6 +132,8 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     decoration: InputDecoration(
                       hintText: 'Enter a business phone number',
                       labelText: 'Business phone number',
+                      labelStyle: TextStyle(color: Colors.white54),
+                      hintStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -149,7 +158,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business physical address',
+                      hintStyle: TextStyle(color: Colors.white54),
                       labelText: 'Physical address',
+                      labelStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -172,7 +183,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business email',
+                      hintStyle: TextStyle(color: Colors.white54),
                       labelText: 'Business email',
+                      labelStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -197,7 +210,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a short description about your business',
+                      hintStyle: TextStyle(color: Colors.white54),
                       labelText: 'Business description',
+                      labelStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -219,7 +234,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',
+                      hintStyle: TextStyle(color: Colors.white54),
                       labelText: 'Business name',
+                      labelStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -241,7 +258,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: 'Enter a business name',
+                      hintStyle: TextStyle(color: Colors.white54),
                       labelText: 'Business name',
+                      labelStyle: TextStyle(color: Colors.white54),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),

@@ -207,18 +207,6 @@ class _BusinessLocationsState extends State<BusinessLocations> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: this._scaffoldKey,
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      //   centerTitle: true,
-      //   actions: <Widget>[
-      //     IconButton(
-      //       icon: Icon(Icons.search),
-      //       onPressed: () {
-      //         showSearch(context: context, delegate: ShopSearch());
-      //       },
-      //     )
-      //   ],
-      // ), Drawer(),
       body: Stack(
         children: <Widget>[
           _googleMap(context),
@@ -366,15 +354,211 @@ class _BusinessLocationsState extends State<BusinessLocations> {
   _buildBottomSheet(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.80,
-      padding: EdgeInsets.all(8.0),
+      height: size.height * 4 / 7,
+      // padding: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: ListView(
         children: <Widget>[
-          ListTile(
-              title: Text(listShops[_pageController.page.toInt()].shopName)),
+          // ListTile(
+          //   title: Text(listShops[_pageController.page.toInt()].shopName),
+          // ),
+
+          Container(
+            width: size.width,
+            height: 60,
+            color: Color(0xFF00695C),
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          listShops[_pageController.page.toInt()].shopName,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          listShops[_pageController.page.toInt()]
+                              .shopDescription,
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 52.0,
+                    height: 52.0,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: NetworkImage(
+                            listShops[_pageController.page.toInt()].shopThumb),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Icon(
+                    Icons.phone,
+                    color: Color(0xFF00695C),
+                    size: 30,
+                  ),
+                ),
+                Expanded(
+                  child: Icon(
+                    Icons.vpn_lock,
+                    color: Color(0xFF00695C),
+                    size: 30,
+                  ),
+                ),
+                Expanded(
+                  child: Icon(
+                    Icons.send,
+                    color: Color(0xFF00695C),
+                    size: 30,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  child: Icon(
+                    Icons.location_on,
+                    color: Color(0xFF00695C),
+                    size: 40,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "Melinne Makaburini",
+                    style: TextStyle(
+                      color: Color(0xFF00695C),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    width: 5,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  child: Icon(
+                    Icons.alarm,
+                    color: Color(0xFF00695C),
+                    size: 40,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "Open",
+                    style: TextStyle(
+                      color: Color(0xFF00695C),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    width: 5,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  child: Icon(
+                    Icons.link,
+                    color: Color(0xFF00695C),
+                    size: 40,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "www.msungi.com",
+                    style: TextStyle(
+                      color: Color(0xFF00695C),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    width: 5,
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  child: Icon(
+                    Icons.phone,
+                    color: Color(0xFF00695C),
+                    size: 40,
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    "0657439606",
+                    style: TextStyle(
+                      color: Color(0xFF00695C),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: SizedBox(
+                    width: 5,
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -414,9 +598,17 @@ class ShopSearch extends SearchDelegate<Shop> {
     return ListView.builder(
         itemCount: listShops.length,
         itemBuilder: (context, index) {
-          final Shop shop = listShops[index];
-          return ListTile(
-            title: Text(shop.shopName),
+          // final Shop shop = listShops[index];
+          return Container(
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 120,
+                  width: 80,
+                  child: Container(),
+                )
+              ],
+            ),
           );
         });
   }

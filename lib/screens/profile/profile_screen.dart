@@ -15,7 +15,7 @@ class _UserProfileState extends State<UserProfile> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Email',
+          'Email Address',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -24,7 +24,7 @@ class _UserProfileState extends State<UserProfile> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
@@ -36,7 +36,7 @@ class _UserProfileState extends State<UserProfile> {
                 Icons.email,
                 color: Colors.white,
               ),
-              hintText: 'Enter you email',
+              hintText: 'Enter personal email(Optional)',
               hintStyle: TextStyle(color: Colors.white54),
             ),
           ),
@@ -45,12 +45,12 @@ class _UserProfileState extends State<UserProfile> {
     );
   }
 
-  Widget _passwordInput() {
+  Widget _fullNameInput() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Password',
+          'Full Name',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -59,19 +59,18 @@ class _UserProfileState extends State<UserProfile> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
-            obscureText: true,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
-                Icons.lock,
+                Icons.person_outline,
                 color: Colors.white,
               ),
-              hintText: 'Enter you password',
+              hintText: 'Enter your full name',
               hintStyle: TextStyle(color: Colors.white54),
             ),
           ),
@@ -80,7 +79,77 @@ class _UserProfileState extends State<UserProfile> {
     );
   }
 
-  Widget _loginButton() {
+  Widget _phoneNumberInput() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Phone Number',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kInputDecoration,
+          height: 50.0,
+          child: TextField(
+            keyboardType: TextInputType.phone,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.phone_iphone,
+                color: Colors.white,
+              ),
+              hintText: 'Enter your mobile number',
+              hintStyle: TextStyle(color: Colors.white54),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _addressInput() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Current Addresss',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kInputDecoration,
+          height: 50.0,
+          child: TextField(
+            obscureText: true,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.person_outline,
+                color: Colors.white,
+              ),
+              hintText: 'Current your physical address',
+              hintStyle: TextStyle(color: Colors.white54),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _saveChangeButton() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
@@ -93,7 +162,7 @@ class _UserProfileState extends State<UserProfile> {
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'SAVE INFO',
           style: TextStyle(
             color: Color(0xFF26A69A),
             letterSpacing: 1.5,
@@ -153,10 +222,15 @@ class _UserProfileState extends State<UserProfile> {
                         ),
                       ),
                       SizedBox(height: 30.0),
+                      _fullNameInput(),
+                      SizedBox(height: 30.0),
                       _emailInput(),
                       SizedBox(height: 30.0),
-                      _passwordInput(),
-                      _loginButton(),
+                      _addressInput(),
+                      SizedBox(height: 30.0),
+                      _phoneNumberInput(),
+                      SizedBox(height: 30.0),
+                      _saveChangeButton(),
                       // _signUpButton()
                     ],
                   ),

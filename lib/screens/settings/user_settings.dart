@@ -24,7 +24,7 @@ class _UserSettingsState extends State<UserSettings> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
@@ -45,12 +45,12 @@ class _UserSettingsState extends State<UserSettings> {
     );
   }
 
-  Widget _passwordInput() {
+  Widget _confirmNewpasswordInput() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Password',
+          'Confirm New Password',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class _UserSettingsState extends State<UserSettings> {
         SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kInputDecoration(),
+          decoration: kInputDecoration,
           height: 50.0,
           child: TextField(
             obscureText: true,
@@ -71,7 +71,7 @@ class _UserSettingsState extends State<UserSettings> {
                 Icons.lock,
                 color: Colors.white,
               ),
-              hintText: 'Enter you password',
+              hintText: 'Confirm new password',
               hintStyle: TextStyle(color: Colors.white54),
             ),
           ),
@@ -80,7 +80,77 @@ class _UserSettingsState extends State<UserSettings> {
     );
   }
 
-  Widget _loginButton() {
+  Widget _newPasswordInput() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'New Password',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kInputDecoration,
+          height: 50.0,
+          child: TextField(
+            obscureText: true,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.white,
+              ),
+              hintText: 'Enter new password',
+              hintStyle: TextStyle(color: Colors.white54),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _currentPasswordInput() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Current Password',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kInputDecoration,
+          height: 50.0,
+          child: TextField(
+            obscureText: true,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.lock,
+                color: Colors.white,
+              ),
+              hintText: 'Current Password',
+              hintStyle: TextStyle(color: Colors.white54),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _saveChangeButton() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
@@ -93,7 +163,7 @@ class _UserSettingsState extends State<UserSettings> {
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'SAVE CHANGES',
           style: TextStyle(
             color: Color(0xFF26A69A),
             letterSpacing: 1.5,
@@ -155,8 +225,12 @@ class _UserSettingsState extends State<UserSettings> {
                       SizedBox(height: 30.0),
                       _emailInput(),
                       SizedBox(height: 30.0),
-                      _passwordInput(),
-                      _loginButton(),
+                      _currentPasswordInput(),
+                      SizedBox(height: 30.0),
+                      _newPasswordInput(),
+                      SizedBox(height: 30.0),
+                      _confirmNewpasswordInput(),
+                      _saveChangeButton(),
                       // _signUpButton()
                     ],
                   ),
